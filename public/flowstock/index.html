@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>FlowStock AI — Warehouse Control Center</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div class="bg-orbs"><span></span><span></span><span></span></div>
+
+<button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">☰</button>
+
+<aside class="sidebar" id="sidebar">
+  <div class="brand">
+    <div class="brand-mark">FS</div>
+    <div>
+      <h1>FlowStock <span>AI</span></h1>
+      <p>Warehouse Control Center</p>
+    </div>
+  </div>
+  <nav id="nav">
+    <a href="#dashboard" data-view="dashboard"><i>▦</i> Dashboard</a>
+    <a href="#inventory" data-view="inventory"><i>▤</i> Inventory</a>
+    <a href="#orders" data-view="orders"><i>▣</i> Orders</a>
+    <a href="#allocation" data-view="allocation"><i>◈</i> Allocation</a>
+    <a href="#picking" data-view="picking"><i>◉</i> Picking</a>
+    <a href="#packing" data-view="packing"><i>◍</i> Packing</a>
+    <a href="#exceptions" data-view="exceptions"><i>⚠</i> Exceptions <span class="nav-count" id="navExc">0</span></a>
+    <a href="#decisions" data-view="decisions"><i>✦</i> Decisions <span class="nav-count" id="navDec">0</span></a>
+    <a href="#analytics" data-view="analytics"><i>◔</i> Analytics</a>
+  </nav>
+  <div class="sidebar-foot">
+    <button class="btn btn-crisis" id="crisisBtn">⚡ Run Warehouse Crisis</button>
+    <button class="btn btn-ghost" id="resetBtn">↺ Reset Demo Data</button>
+    <div class="clock" id="clock"></div>
+  </div>
+</aside>
+
+<main class="main">
+  <header class="topbar">
+    <div>
+      <h2 id="viewTitle">Dashboard</h2>
+      <p id="viewSub">Live operations overview</p>
+    </div>
+    <div class="topbar-right">
+      <div class="pulse-chip"><span class="dot"></span> Engine online</div>
+      <button class="btn btn-primary" id="runEngineBtn">◈ Run Allocation Engine</button>
+    </div>
+  </header>
+  <section id="view" class="view"></section>
+</main>
+
+<div class="modal-backdrop" id="modalBackdrop">
+  <div class="modal glass" role="dialog" aria-modal="true">
+    <div class="modal-head">
+      <h3 id="modalTitle">Title</h3>
+      <button class="icon-btn" id="modalClose" aria-label="Close">✕</button>
+    </div>
+    <div class="modal-body" id="modalBody"></div>
+  </div>
+</div>
+
+<div class="toast-wrap" id="toasts"></div>
+<script src="script.js"></script>
+</body>
+</html>
